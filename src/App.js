@@ -13,7 +13,10 @@ function App() {
   // this useEffect will run once
   // similar to componentDidMount()
   useEffect(() => {
-    fetch(url)
+    fetch(url, {
+      method: 'GET',
+      headers: {'Content-Type': 'application/json'}
+    })
       .then(res => res.json())
       .then(
         (result) => {
